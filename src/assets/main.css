@@ -1,0 +1,24 @@
+@import "./base.css";
+
+#app {
+  margin: 0 auto;
+  font-weight: normal;
+  width: 100%;
+  /* max-width: 1400px; */
+  padding: 100px 0px 0px 0px;
+}
+
+a,
+.green {
+}
+
+@media (hover: hover) {
+  a:hover {
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  #app {
+    padding: 10px 10px 10px 10px;
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "developer_info": {
+    "name": "John Myers",
+    "self_title": "Experienced Full-Stack Developer",
+    "location": "Sheffield, UK",
+    "info": "I'm a software developer currently working in the transportation and taxi space. I enjoy climbing in my downtime as well as outdoor exploring - when it's not too cold",
+    "background": "Hi! I'm John. Back in comprehensive school, I began to gain a interest in computers. More specifically, I was ever curious how they functioned. How did the information I was entering into the keyboard go from there, on to the computer and saved onto the computer or sent across to my friend.\n\nI then decided to pursue computing as a course of choice at GCSE and College level education."
+  },
+  "jobs": [
+    {
+      "title": "Lead Developer",
+      "company": "iCabbi",
+      "info": "As a Lead Developer at iCabbi, I am responsible for the codebase of the Voice Product, including Voice+. My daily responsiblities include but are not limited to; handling Jira, managing pull requests, code reviews, and mentoring junior developers and helping the Product Manager plan the future roadmap.",
+      "year_started": 2022,
+      "year_ended": null,
+      "tech_stack": [
+        "php",
+        "html",
+        "mysql",
+        "AWS",
+        "Jira",
+        "Git",
+        "Github",
+        "CircleCI",
+        "Asterisk PBX",
+        "Opensips",
+        "Kamailio"
+      ]
+    },
+    {
+      "title": "Voice Developer",
+      "company": "iCabbi",
+      "info": "As a Voice Developer, I was responsible for making new features or fixing bugs which were assigned to me by the Lead Developer. These could be bugs with the Voice or Voice+ product. While in this role, I helped to create a new automation product called Voice+ which had the aim of fully automating the booking process for taxi companies.",
+      "year_started": 2020,
+      "year_ended": 2022,
+      "tech_stack": [
+        "php",
+        "html",
+        "mysql",
+        "AWS",
+        "Jira",
+        "Git",
+        "Github",
+        "Asterisk PBX"
+      ]
+    },
+    {
+      "title": "Voice Support Engineer",
+      "company": "DiSC Systems (now iCabbi)",
+      "info": "As a Voice Support Engineer, I was tasked with identifying and diagnosing customer bugs with the Voice system. This was mainly acomplished by utilising Zendesk as a customer communication tool. I was then responsible for identifying if the bug was a configuration mismatch or a bug with the code. If it was the latter, I would then create a bug ticket in Jira and alert the product team.",
+      "year_started": 2018,
+      "year_ended": 2020,
+      "tech_stack": ["Zendesk", "Jira", "php", "html", "mysql", "Asterisk PBX"]
+    },
+    {
+      "title": "ICT Technician",
+      "company": "Wath Comprehensive School",
+      "info": "As an ICT Technician at a school, I was responsible for helping both staff and students with technical queries ranging from simple things such as Microsoft Office queries to more advanced items such as software installs using Microsoft's SCCM tool. Whilst in this role, I created a new website for booking out accessibility laptops and iPads for students with disabilities.",
+      "year_started": 2017,
+      "year_ended": 2018,
+      "tech_stack": [
+        "Microsoft SCCM",
+        "Microsoft Office",
+        "Windows Server",
+        "Windows 10",
+        "HTML",
+        "CSS",
+        "php",
+        "mysql"
+      ]
+    }
+  ]
+}
