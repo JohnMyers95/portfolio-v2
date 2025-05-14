@@ -75,7 +75,7 @@
 
     --color-heading: var(--vt-c-text-dark-1);
     --color-text: var(--vt-c-text-dark-2);
-    --color-tile-text: var(--vt-c-black);
+    --color-tile-text: var(--vt-c-white);
 
     --color-tile-background: var(--vt-c-dark-purple);
   }
