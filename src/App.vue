@@ -18,48 +18,55 @@ components: {
               <div class="dev-image"><img src="./assets/headshot.png" alt="it's a me, Mario!" /></div>
             </div>
             <h1 class="dev-name">{{ config.developer_info.name }}</h1>
-            <h1 class="light-gray sub-heading">
+            <h2 class="light-gray sub-heading">
               {{ config.developer_info.self_title }}
-            </h1>
-            <p>
-              {{ config.developer_info.info }}
-            </p>
+            </h2>
+            <p class="location-line">{{ config.developer_info.info }}</p>
+
+            <!-- Contact Links -->
+            <div class="contact-links">
+              <a :href="'mailto:' + config.developer_info.email">
+                <span class="contact-icon">✉</span> {{ config.developer_info.email }}
+              </a>
+              <a :href="'tel:' + config.developer_info.phone">
+                <span class="contact-icon">📞</span> {{ config.developer_info.phone }}
+              </a>
+              <a :href="'https://' + config.developer_info.website" target="_blank">
+                <span class="contact-icon">🌐</span> {{ config.developer_info.website }}
+              </a>
+              <a :href="config.developer_info.linkedin" target="_blank">
+                <span class="contact-icon">in</span> LinkedIn
+              </a>
+              <a :href="config.developer_info.github_personal" target="_blank">
+                <span class="contact-icon">⌥</span> GitHub
+              </a>
+            </div>
+
+            <!-- Education -->
+            <div class="education-section">
+              <h3 class="section-label">Education</h3>
+              <div v-for="edu in config.education" :key="edu.degree" class="edu-item">
+                <span class="edu-year">{{ edu.year }}</span>
+                <div>
+                  <strong>{{ edu.degree }}</strong>
+                  <div class="edu-institution">{{ edu.institution }}</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+
         <div class="right-bar">
-          <section>
-            {{ config.developer_info.background }}
+          <section class="profile-section">
+            <p>{{ config.developer_info.background }}</p>
           </section>
+
           <section id="experience">
+            <h3 class="section-label">Experience</h3>
             <div v-for="foundJob in config.jobs" :key="foundJob.title + '-' + foundJob.company">
               <job :job="foundJob"></job>
             </div>
           </section>
-          <!--
-          <section id="projects">
-            <div class="project">
-              <div class="project-image"></div>
-              <div class="project-details">
-                <div class="project-title">
-                  <h3>Project Title</h3>
-                </div>
-                <div class="project-info">
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quisquam, voluptatum.
-                  </p>
-                </div>
-                <div class="project-tech-stack">
-                  <ul>
-                    <li>PHP</li>
-                    <li>MySQL</li>
-                    <li>Asterisk</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </section>
-          -->
         </div>
       </div>
     </main>
@@ -116,31 +123,101 @@ components: {
   object-fit: cover;
 }
 
+.dev-name {
+  font-family: "Patua One", serif;
+  font-size: 3em;
+  margin-bottom: 4px;
+}
+
+.sub-heading {
+  font-family: "Patua One", serif;
+  font-size: 1em;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.location-line {
+  font-size: 0.85em;
+  color: var(--color-text);
+  margin-bottom: 16px;
+}
+
+/* Contact links */
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+
+.contact-links a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85em;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.contact-links a:hover {
+  color: var(--color-heading);
+}
+
+.contact-icon {
+  font-style: normal;
+  width: 18px;
+  text-align: center;
+}
+
+/* Education */
+.education-section {
+  margin-top: 8px;
+}
+
+.edu-item {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 0.85em;
+}
+
+.edu-year {
+  color: var(--color-text);
+  padding-top: 2px;
+}
+
+.edu-institution {
+  color: var(--color-text);
+  font-size: 0.9em;
+}
+
+/* Section labels */
+.section-label {
+  font-family: "Patua One", serif;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  margin-bottom: 10px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--color-border, #ccc);
+}
+
 section {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
+.profile-section {
+  padding-top: 20px;
+  line-height: 1.7;
+}
+
 section#experience {
-  padding-top: 80px;
-}
-
-section#projects {
-  padding-top: 80px;
-}
-
-.intro {
-  font-family: "Inter", sans-serif;
-}
-
-.dev-name {
-  font-family: "Patua One", serif;
-  font-size: 4em;
-}
-
-.sub-heading {
-  font-family: "Patua One", serif;
+  padding-top: 40px;
 }
 
 .wrap {
@@ -156,6 +233,10 @@ section#projects {
 @media only screen and (max-width: 900px) {
   .main-wrapper {
     grid-template-columns: 1fr;
+  }
+
+  .dev-details {
+    position: static;
   }
 }
 

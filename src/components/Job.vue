@@ -7,18 +7,24 @@ const props = defineProps({
 <template>
   <div class="job is-flex">
     <div class="job-timeline">
-      <p>{{ props.job.year_started }} - {{ props.job.year_ended }}</p>
+      <p>{{ props.job.year_started }} – {{ props.job.year_ended }}</p>
     </div>
     <div class="job-details">
       <div class="job-title">
-        <a href="https://icabbi.com" target="_blank">{{ props.job.title }} - {{ props.job.company }}</a>
+        <component :is="props.job.url ? 'a' : 'span'" :href="props.job.url || undefined" target="_blank">
+          {{ props.job.title }} · {{ props.job.company }}
+          <span v-if="props.job.location" class="job-location">{{ props.job.location }}</span>
+        </component>
       </div>
       <div class="job-info">
-        {{ props.job.info }}
+        <ul v-if="props.job.bullets && props.job.bullets.length">
+          <li v-for="(bullet, i) in props.job.bullets" :key="i">{{ bullet }}</li>
+        </ul>
+        <p v-else>{{ props.job.info }}</p>
       </div>
       <div class="job-tech-stack">
         <ul>
-          <li v-for="tech in props.job.tech_stack">{{ tech }}</li>
+          <li v-for="tech in props.job.tech_stack" :key="tech">{{ tech }}</li>
         </ul>
       </div>
     </div>
@@ -47,13 +53,46 @@ const props = defineProps({
 
 .job-timeline {
   color: var(--color-text);
+  font-size: 0.85em;
+  padding-top: 3px;
+}
+
+.job-title {
+  font-weight: 600;
+  font-size: 1em;
+  margin-bottom: 8px;
+}
+
+.job-location {
+  font-weight: 400;
+  font-size: 0.85em;
+  color: var(--color-text);
+  margin-left: 6px;
 }
 
 .job-details {
-  text-align: justify;
+  text-align: left;
 }
 
 .job-info {
+  color: var(--color-text);
+  font-size: 0.9em;
+  line-height: 1.6;
+}
+
+.job-info ul {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-left: 1.2em;
+  list-style: disc;
+}
+
+.job-info ul li {
+  padding: 0;
+  background: none;
+  border-radius: 0;
+  font-size: 1em;
   color: var(--color-text);
 }
 
@@ -72,7 +111,7 @@ const props = defineProps({
   display: flex;
   border-radius: 15px;
   background: #4a4aff87;
-  font-size: 0.9em;
+  font-size: 0.85em;
   color: var(--color-tile-text);
 }
 

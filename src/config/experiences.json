@@ -1,0 +1,169 @@
+{
+  "developer_info": {
+    "name": "John Myers",
+    "self_title": "Lead Developer · Full-Stack / Voice",
+    "phone": "07518 990096",
+    "email": "johnpmyers1995@gmail.com",
+    "website": "johnmyers.dev",
+    "linkedin": "https://linkedin.com/in/john-myers-984465165",
+    "github_icabbi": "https://github.com/icabbi-johnm",
+    "github_personal": "https://github.com/JohnMyers95",
+    "location": "Based near Sheffield, UK",
+    "availability": "Open to remote, hybrid, or local on-site roles",
+    "info": "Based near Sheffield, UK · Open to remote, hybrid, or local on-site roles",
+    "background": "Results-driven Lead Developer with 8+ years of commercial experience delivering full-stack web applications and cloud infrastructure solutions. Currently leading the Voice engineering team at iCabbi, overseeing a platform that handles 14 million inbound calls per month. Drove the adoption of Git and GitHub across the Voice product, transforming a manual FTP-based deployment process into a modern CI/CD pipeline and cutting release cycles from weeks to hours. Experienced in hiring and growing engineering teams, having interviewed ~10 candidates and hired 5. Passionate about high-quality software, strong engineering culture, and mentoring developers to do their best work. Now looking to bring this experience to a new challenge in a senior or lead engineering role."
+  },
+  "jobs": [
+    {
+      "title": "Lead Developer – Voice",
+      "company": "iCabbi",
+      "location": "Sheffield",
+      "year_started": "2022",
+      "year_ended": "Present",
+      "url": "https://icabbi.com",
+      "info": "Lead a Voice engineering team of 3 developers (previously 8), owning technical direction, architecture decisions, and delivery across a platform handling 14 million inbound calls per month. Introduced Git and GitHub to the Voice product, replacing a manual FTP-based deployment process with a modern CI/CD pipeline — reducing deployment time from weeks to hours. Led architectural investigation and design of new product initiatives, interviewed ~10 candidates and hired 5 developers.",
+      "bullets": [
+        "Lead a Voice engineering team of 3 developers (previously 8), owning technical direction, architecture decisions, and delivery across a platform handling 14 million inbound calls per month.",
+        "Introduced Git and GitHub to the Voice product, replacing a manual FTP-based deployment process with a modern CI/CD pipeline — reducing deployment time from weeks to hours.",
+        "Led architectural investigation and design of new product initiatives and key features across the organisation.",
+        "Interviewed approximately 10 candidates and successfully hired 5 developers.",
+        "Conducted code reviews and drove improvements in engineering standards, tooling, and development practices.",
+        "Collaborated closely with product and stakeholders to define roadmap priorities and translate business requirements into scalable technical solutions."
+      ],
+      "tech_stack": [
+        "PHP",
+        "Node.js",
+        "Vue.js",
+        "React",
+        "TypeScript",
+        "MySQL",
+        "Docker",
+        "AWS",
+        "Asterisk PBX",
+        "Kamailio",
+        "RTPEngine",
+        "GitHub"
+      ]
+    },
+    {
+      "title": "Software Developer",
+      "company": "iCabbi",
+      "location": "Sheffield",
+      "year_started": "2020",
+      "year_ended": "2022",
+      "url": "https://icabbi.com",
+      "info": "Architected and maintained cloud-native applications on AWS. Designed and built customer-facing and internal dashboards using Vue.js, Buefy, TypeScript and Node.js. Extended and maintained an Asterisk PBX telephony platform using PHP and MySQL. Containerised services with Docker and mentored team members on new systems and tools.",
+      "bullets": [
+        "Architected and maintained cloud-native applications on AWS (EC2, ECS, Lambda, RDS, S3, API Gateway, Cognito, CodePipeline/CodeDeploy).",
+        "Designed and built customer-facing and internal dashboards using Vue.js, Buefy, TypeScript and Node.js, improving operator efficiency.",
+        "Extended and maintained an Asterisk PBX telephony platform using PHP and MySQL.",
+        "Containerised services with Docker, streamlining deployments and reducing environment-related incidents.",
+        "Mentored team members on new systems and tools, raising the team's overall technical capability."
+      ],
+      "tech_stack": [
+        "PHP",
+        "Node.js",
+        "Vue.js",
+        "React",
+        "TypeScript",
+        "Buefy",
+        "MySQL",
+        "Docker",
+        "AWS",
+        "Asterisk PBX",
+        "GitHub"
+      ]
+    },
+    {
+      "title": "Support / Junior Developer",
+      "company": "iCabbi",
+      "location": "Sheffield",
+      "year_started": "2018",
+      "year_ended": "2020",
+      "url": "https://icabbi.com",
+      "info": "Resolved customer-reported technical issues via Zendesk, maintaining high satisfaction scores within SLA. Provided on-call support for service-affecting incidents. Managed SSL certificate renewals and EC2 maintenance. Contributed to the PHP/MySQL codebase, gaining hands-on development experience alongside support duties.",
+      "bullets": [
+        "Resolved customer-reported technical issues via Zendesk, maintaining high satisfaction scores within SLA.",
+        "Provided on-call support for service-affecting incidents, minimising customer downtime.",
+        "Managed SSL certificate renewals and ran routine maintenance tasks on customer EC2 instances.",
+        "Contributed to PHP/MySQL codebase, gaining hands-on development experience alongside support duties."
+      ],
+      "tech_stack": [
+        "PHP",
+        "MySQL",
+        "HTML",
+        "CSS",
+        "Asterisk PBX",
+        "GitLab",
+        "GitHub"
+      ]
+    },
+    {
+      "title": "ICT Technician",
+      "company": "Wath Comprehensive School",
+      "location": "Rotherham",
+      "year_started": "2017",
+      "year_ended": "2018",
+      "url": "",
+      "info": "Administered and maintained the school's IT infrastructure including Windows Servers, Active Directory, switches and end-user devices. Diagnosed and repaired hardware faults. Managed SharePoint intranet and MS SQL databases; developed internal tools in PHP/HTML/CSS.",
+      "bullets": [
+        "Administered and maintained the school's IT infrastructure including Windows Servers, Active Directory, switches and end-user devices.",
+        "Diagnosed and repaired hardware faults, minimising disruption to teaching and learning.",
+        "Managed SharePoint intranet and MS SQL databases; developed internal tools in PHP/HTML/CSS."
+      ],
+      "tech_stack": [
+        "Azure",
+        "Active Directory",
+        "Windows Server",
+        "MS SQL",
+        "SharePoint",
+        "PHP",
+        "HTML",
+        "CSS"
+      ]
+    }
+  ],
+  "skills": {
+    "front_end": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "TypeScript",
+      "Vue.js",
+      "React",
+      "Bootstrap",
+      "Buefy"
+    ],
+    "back_end": ["PHP", "Node.js", "TypeScript", "MySQL", "MS SQL"],
+    "cloud_aws": [
+      "EC2",
+      "RDS",
+      "ECS",
+      "ECR",
+      "S3",
+      "Lambda",
+      "API Gateway",
+      "Cognito",
+      "CodePipeline",
+      "CodeDeploy",
+      "Route53",
+      "IAM",
+      "EBS"
+    ],
+    "devops": ["Docker", "CentOS", "GitHub Actions", "GitLab CI/CD"],
+    "telephony": ["Asterisk PBX", "Kamailio", "RTPEngine"],
+    "other": ["Azure", "Active Directory", "Windows Server", "SharePoint"]
+  },
+  "education": [
+    {
+      "degree": "BSc Computing and Systems Development",
+      "institution": "University of Hull",
+      "year": "2017"
+    },
+    {
+      "degree": "HND Computing and Systems Development (Merit)",
+      "institution": "Rotherham College",
+      "year": "2016"
+    }
+  ]
+}
