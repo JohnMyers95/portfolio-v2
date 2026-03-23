@@ -5,27 +5,31 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="job is-flex">
+  <div class="job">
     <div class="job-timeline">
-      <p>{{ props.job.year_started }} – {{ props.job.year_ended }}</p>
+      <span class="job-year">{{ props.job.year_started }}</span>
+      <span class="job-dash">—</span>
+      <span class="job-year">{{ props.job.year_ended }}</span>
     </div>
     <div class="job-details">
-      <div class="job-title">
-        <component :is="props.job.url ? 'a' : 'span'" :href="props.job.url || undefined" target="_blank">
-          {{ props.job.title }} · {{ props.job.company }}
-          <span v-if="props.job.location" class="job-location">{{ props.job.location }}</span>
+      <div class="job-header">
+        <component :is="props.job.url ? 'a' : 'span'" :href="props.job.url || undefined" target="_blank"
+          class="job-title-link">
+          {{ props.job.title }}
         </component>
+        <span class="job-company">
+          {{ props.job.company }}
+          <span v-if="props.job.location" class="job-location">· {{ props.job.location }}</span>
+        </span>
       </div>
-      <div class="job-info">
-        <ul v-if="props.job.bullets && props.job.bullets.length">
-          <li v-for="(bullet, i) in props.job.bullets" :key="i">{{ bullet }}</li>
-        </ul>
-        <p v-else>{{ props.job.info }}</p>
-      </div>
+
+      <ul v-if="props.job.bullets && props.job.bullets.length" class="job-bullets">
+        <li v-for="(bullet, i) in props.job.bullets" :key="i">{{ bullet }}</li>
+      </ul>
+      <p v-else class="job-info">{{ props.job.info }}</p>
+
       <div class="job-tech-stack">
-        <ul>
-          <li v-for="tech in props.job.tech_stack" :key="tech">{{ tech }}</li>
-        </ul>
+        <span v-for="tech in props.job.tech_stack" :key="tech" class="tech-tag">{{ tech }}</span>
       </div>
     </div>
   </div>
@@ -34,91 +38,138 @@ const props = defineProps({
 <style scoped>
 .job {
   display: grid;
-  grid-template-columns: 1fr 4fr;
-  gap: 25px;
-  padding: 15px;
-  transition: all 0.3s;
+  grid-template-columns: 96px 1fr;
+  gap: 24px;
+  padding: 20px 16px;
+  border-radius: 10px;
+  transition: background 0.2s;
+  cursor: default;
+  margin: 0 -16px;
 }
 
 .job:hover {
-  background: #5252ff4a;
-  border-radius: 15px;
-  cursor: pointer;
+  background: var(--bg-hover, #1e1e24);
 }
 
-.job a {
-  text-decoration: none;
-  color: var(--color-heading);
-}
-
+/* Timeline column */
 .job-timeline {
-  color: var(--color-text);
-  font-size: 0.85em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   padding-top: 3px;
+  gap: 0;
 }
 
-.job-title {
-  font-weight: 600;
-  font-size: 1em;
-  margin-bottom: 8px;
+.job-year {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72em;
+  color: var(--text-muted, #5a5a6e);
+  line-height: 1.4;
+}
+
+.job-dash {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72em;
+  color: var(--text-muted, #5a5a6e);
+}
+
+/* Job content */
+.job-header {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-bottom: 12px;
+}
+
+.job-title-link {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.95em;
+  font-weight: 500;
+  color: var(--text-bright, #e8e8f0);
+  text-decoration: none;
+  transition: color 0.18s;
+}
+
+.job:hover .job-title-link {
+  color: var(--accent, #e8b84b);
+}
+
+.job-company {
+  font-size: 0.82em;
+  color: var(--text-muted, #5a5a6e);
+  font-weight: 300;
 }
 
 .job-location {
-  font-weight: 400;
-  font-size: 0.85em;
-  color: var(--color-text);
-  margin-left: 6px;
+  color: var(--text-muted, #5a5a6e);
 }
 
-.job-details {
-  text-align: left;
+/* Bullets */
+.job-bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-left: 0;
+  margin-bottom: 14px;
+  list-style: none;
+}
+
+.job-bullets li {
+  font-size: 0.85em;
+  color: var(--text, #a8a8b8);
+  line-height: 1.65;
+  padding-left: 16px;
+  position: relative;
+}
+
+.job-bullets li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: var(--accent-dim, #a07c28);
 }
 
 .job-info {
-  color: var(--color-text);
-  font-size: 0.9em;
-  line-height: 1.6;
+  font-size: 0.85em;
+  color: var(--text, #a8a8b8);
+  line-height: 1.7;
+  margin-bottom: 14px;
 }
 
-.job-info ul {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding-left: 1.2em;
-  list-style: disc;
-}
-
-.job-info ul li {
-  padding: 0;
-  background: none;
-  border-radius: 0;
-  font-size: 1em;
-  color: var(--color-text);
-}
-
+/* Tech tags */
 .job-tech-stack {
-  padding: 10px 0px;
-}
-
-.job-tech-stack ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
+  gap: 6px;
 }
 
-.job-tech-stack ul li {
-  padding: 2px 10px;
-  display: flex;
-  border-radius: 15px;
-  background: #4a4aff87;
-  font-size: 0.85em;
-  color: var(--color-tile-text);
+.tech-tag {
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.68em;
+  color: var(--accent, #e8b84b);
+  background: rgba(232, 184, 75, 0.08);
+  border: 1px solid rgba(232, 184, 75, 0.18);
+  letter-spacing: 0.03em;
+  transition: background 0.18s, border-color 0.18s;
 }
 
-@media only screen and (max-width: 900px) {
+.job:hover .tech-tag {
+  background: rgba(232, 184, 75, 0.12);
+  border-color: rgba(232, 184, 75, 0.3);
+}
+
+@media (max-width: 600px) {
   .job {
     grid-template-columns: 1fr;
-    gap: 5px;
+    gap: 8px;
+    margin: 0;
+  }
+
+  .job-timeline {
+    flex-direction: row;
+    gap: 4px;
   }
 }
 </style>
